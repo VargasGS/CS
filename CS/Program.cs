@@ -19,13 +19,13 @@ builder.Services.AddDbContext<CoopesaludActivacionRecetaContext>(
         opciones.UseSqlServer(builder.Configuration.GetConnectionString("Coopesalud")); 
     });
 
-builder.Services.AddTransient<IEstadoRecetaRepository, EstadoRecetaRepository>();
-builder.Services.AddTransient<ILugarRetiroRepository, LugarRetiroRepository>();
-builder.Services.AddTransient<ILugarAtencionRepository, LugarAtencionRepository>();
+builder.Services.AddScoped<IEstadoRecetaRepository, EstadoRecetaRepository>();
+builder.Services.AddScoped<ILugarRetiroRepository, LugarRetiroRepository>();
+builder.Services.AddScoped<ILugarAtencionRepository, LugarAtencionRepository>();
 
-builder.Services.AddTransient<IEstadoRecetaService, EstadoRecetaService>();
-builder.Services.AddTransient<ILugarRetiroService, LugarRetiroService>();
-builder.Services.AddTransient<ILugarAtencionService, LugarAtencionService>();
+builder.Services.AddScoped<IEstadoRecetaService, EstadoRecetaService>();
+builder.Services.AddScoped<ILugarRetiroService, LugarRetiroService>();
+builder.Services.AddScoped<ILugarAtencionService, LugarAtencionService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
